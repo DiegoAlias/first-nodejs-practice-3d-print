@@ -1,4 +1,80 @@
-body {
+* {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
     background-color: #202020;
+}
+
+section h2 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    line-height: 100vh;
+    font-size: 10vw;
     color: antiquewhite;
+    font-weight: 700;
+}
+
+.banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.banner .blocks {
+    position: relative;
+    display: block;
+    width: 5vw;
+    height: 5vw;
+    /* background-color: antiquewhite; */
+    animation: animate 0.75s ease-in-out forwards;
+}
+
+.banner .blocks:nth-child(even) {
+    animation: animate 1s ease-in-out forwards;
+}
+
+.banner .blocks:nth-child(7n+3) {
+    animation: animate 2.5s ease-in-out forwards;
+}
+
+.banner .blocks:nth-child(7n+7) {
+    animation: animate 1.5s ease-in-out forwards;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        top: 1000px;
+    }
+
+    50% {
+        opacity: 1;
+        background: url(/img/perro.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    100% {
+        opacity: 1;
+        top: 0px;
+        background: url(/img/perro.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
 }
